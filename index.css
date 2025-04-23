@@ -1,0 +1,196 @@
+::selection{background-color:#7B0323; color:#ffffff !important;}
+::-moz-selection{background-color:#7B0323; color:#ffffff !important;}
+
+*{
+    box-sizing: border-box;
+}
+html, body, * {
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    line-height: 1.6;
+}
+body {
+    padding: 80px 20px 30px;
+    font-size: 1rem;
+    background-color: #E6E7E8;
+}
+main{
+    position: relative;
+    z-index: 1;
+}
+.container{
+    max-width: 750px;
+    margin: 0 auto;
+    min-height: calc(100vh - 140px);
+    text-align: center;
+}
+a{
+    color: #111;
+}
+
+a:hover,
+.more:hover{
+    color: #7B0323;
+}
+a,
+.more,
+.more .material-symbols-outlined{
+    transition: all 300ms ease-out;
+}
+li{
+    list-style: none;
+    margin-top: 5px;
+}
+h1{
+    color: #404041;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 30px;
+}
+h1 span{
+    display: inline-block;
+    line-height: 1;
+}
+@keyframes colorchange {
+    0%   { color: #722f37; }   /* Red Wine */
+    33%  { color: #d36a71; }   /* Rosé Wine (darker for contrast) */
+    66%  { color: #d1b464; }   /* White Wine (golden for contrast) */
+    100% { color: #722f37; }
+}
+  
+h1 .material-symbols-outlined {
+  animation: colorchange 9s infinite;
+}
+h1, h2{
+    font-weight: normal;
+}
+h2{
+    color: #7B0323;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+form{
+    border-radius: 5px;
+    margin: 20px auto;
+    position: relative;
+    max-width: calc(100% - 88px);
+}
+input,
+button {
+    padding: 10px;
+}
+input::placeholder{
+    text-align: center;
+}
+input{
+    font-size: 1rem;
+    border: solid 2px #404041;
+    text-align: left;
+    width: 100%;
+}
+.think form input,
+.think form button{
+    pointer-events:none;
+}
+form button{
+    color: #fff;
+    line-height: 0;
+    background-color: #404041;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    position: absolute;
+    right: -44px;
+    top: 0;
+    height: 100%;
+    width: 44px;
+}
+form button:hover {
+    background-color: #7B0323;
+}
+.thinking{
+    position: relative;
+    display: none;
+}
+.think .thinking{
+    display: inline-block;
+}
+.thinking::after{
+  content: "";
+  display: block;
+  animation: dots 1.5s infinite;
+  position: absolute;
+  left: 100%;
+  transform: 10px;
+  bottom: 0;
+}
+@keyframes dots {
+  0%   { content: ""; }
+  33%  { content: "."; }
+  66%  { content: ".."; }
+  100% { content: "..."; }
+}
+.reply{
+    text-align: left;
+}
+#product-list{
+    margin-top: 20px;
+    margin-bottom: 5vh;
+}
+#product-list ul{
+    margin-bottom: 20px;
+}
+#product-list p{
+    font-size: 0.9rem;
+}
+.more{
+    text-align: center;
+    font-size: 0.8rem;
+    padding-bottom: 30px;
+    width: 100%;
+    cursor: pointer;
+}
+.more span{
+    display: block;
+}
+.more .material-symbols-outlined{
+    transform: translateY(0);
+}
+.more:hover .material-symbols-outlined{
+    transform: translateY(3px);
+}
+.scrolled .more{
+    opacity: 0;
+    pointer-events: none;
+}
+
+footer{
+    font-size: 0.8rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+footer > p:not(:last-child){
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 700px){
+    html{
+        font-size: 15px;
+    }
+    form{
+        max-width: unset;
+        padding-right: 44px;
+    }
+    form button{
+        right: 0;
+    }
+}
